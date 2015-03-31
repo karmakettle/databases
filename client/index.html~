@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>catterbox</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+
+    <!-- dependencies -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <!-- your scripts -->
+    <script src="env/config.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <h1>CATterbox</h1>
+      <select id="roomSelect">
+        <option>lobby</option>
+        <option>Create New Room...</option>
+      </select>
+      <form id="send">
+        <input type="text" class="text" id="message">
+        <button type="button" class="submit">Submit</button>
+      </form>
+      <div id="chats"></div>
+    </div>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
