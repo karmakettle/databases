@@ -12,6 +12,7 @@ CREATE TABLE messages (
   id int NOT NULL auto_increment,
   userid int NOT NULL,
   text varchar(200) NOT NULL,
+  roomname varchar(20),
   PRIMARY KEY(id),
   FOREIGN KEY(userid) REFERENCES users(id)
 );

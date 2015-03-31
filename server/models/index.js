@@ -7,19 +7,30 @@ module.exports = {
   // a function which produces all the messages
   messages: {
     get: function () {
-    	db.connection.query("SELECT message_text from messages");
+        var queryString = "SELECT * from messages";
+        db.connection.query(queryString);
     }, 
     // a function which can be used to insert a message into the database
     post: function (text) {
-    	var sql = "INSERT into messages (message_text) values ('" + text + "');"
-    	return post;
+        var sql = "INSERT into messages (message_text) values ('" + text + "');"
+        return post;
     } 
   },
 
   users: {
     // Ditto as above.
-    get: function () {},
-    post: function () {}
+    get: function (callback) {
+        var queryString = "SELECT * from users";
+        db.connection.query(queryString, function(err, results){
+          callback(results);
+        });
+    },
+    post: function (params, callback) {
+      var queryString = "INSERT INTO users (username) VALUES (?)";
+      db.connection.query(queryString, params, function(err, results){
+        callback(results);
+      });
+    }
   }
 };
 
