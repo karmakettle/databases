@@ -11,6 +11,10 @@ var router = require('./routes.js');
 var app = express();
 module.exports.app = app;
 
+app.get('/', function(req, res){
+	res.send('Hello World!');
+});
+
 // Set what we are listening on.
 app.set("port", 3000);
 
